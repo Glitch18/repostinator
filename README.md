@@ -13,3 +13,5 @@ Then enter your username and password in the upload_pics.py file. You can choose
 to scrape by modifying the redditCrawler.py spider.
 
 When ready, begin by running the shell script RUN.sh
+
+For example, img_urls.txt containing scraped image urls has been provided
