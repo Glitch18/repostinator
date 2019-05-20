@@ -5,8 +5,7 @@ import scrapy
 class RedditcrawlerSpider(scrapy.Spider):
     name = 'redditCrawler'
     allowed_domains = ['reddit.com']
-    start_urls = [
-                    'http://www.reddit.com/r/meirl',
+    start_urls = [  'http://www.reddit.com/r/meirl',
                     'http://www.reddit.com/r/memes',
                     'http://www.reddit.com/r/me_irl',
                     'http://www.reddit.com/r/absolutelynotme_irl',]
