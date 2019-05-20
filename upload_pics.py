@@ -40,7 +40,7 @@ for i in urls:
         viewer.kill()
         continue
     Reformat_Image('image')
-    cli.upload('out.png',"Post mirrored from Reddit\nCREDITS: "+i[1]+".\n.\n.\n.\n.\n.\n#memes #dankmemes #reddit #sadmemes #spicymemes #humor #funny #pewdiepie #fortnite #dailymemes #thanosmemes #minecraft #memereview #lwiay #pewnews #pewpew")
+    cli.upload('out.png',"Post mirrored from Reddit\nCREDITS: "+i[1]+".\n.\n.\n.\n.\n.\n#memes #dankmemes #reddit #sadmemes #spicymemes #humor #funny #pewdiepie #fortnite #dailymemes #thanosmemes #minecraft #memereview #lwiay #pewnews #pewpew #memestgram #memedaily #memesfunny #epicmemes #normiememes #spicymeme #stolenmemes #dankmemesdaily #mememachine")
     viewer.terminate()
     viewer.kill()
 
