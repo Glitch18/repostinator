@@ -30,19 +30,22 @@ cli = client(username,password)
 
 for i in urls:
     r = requests.get(i[0])
-    f = open("image.jpg",'wb')
+    f = open("image",'wb')
     f.write(r.content)
-    viewer = subprocess.Popen(['eog','image.jpg'])
+    viewer = subprocess.Popen(['eog','image'])
+    print("URL - " + i[2])
     c = input("upload?[y/n]")
     if c=='n':
         viewer.terminate()
         viewer.kill()
         continue
-    Reformat_Image('image.jpg')
-    cli.upload('out.png',"Post mirrored from Reddit\nCREDITS: "+i[1]+".\n.\n.\n.\n.\n.\n#memes #dankmemes #reddit #sadmemes #spicymemes #humor #funny #pewdiepie #fortnite #dailymemes #thanosmemes #minecraft")
+    Reformat_Image('image')
+    cli.upload('out.png',"Post mirrored from Reddit\nCREDITS: "+i[1]+".\n.\n.\n.\n.\n.\n#memes #dankmemes #reddit #sadmemes #spicymemes #humor #funny #pewdiepie #fortnite #dailymemes #thanosmemes #minecraft #memereview #lwiay #pewnews #pewpew")
     viewer.terminate()
     viewer.kill()
 
-os.remove('image.jpg')
+os.remove('image')
 if os.path.isfile('out.png'):
     os.remove('out.png')
+os.remove('post_urls.txt')
+os.remove('img_urls.txt')
