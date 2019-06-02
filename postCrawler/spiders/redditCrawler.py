@@ -15,7 +15,7 @@ class RedditcrawlerSpider(scrapy.Spider):
         l = [x for x in l if 'i.redd.it' in x or 'external-preview.redd.it' in x]
         if len(l)==0:
             return
-        author = response.xpath("//a[@class='_2tbHP6ZydRpjI44J3syuqC fmmy6j-1 eWFTds']/text()").get()
+        author = response.xpath("//a[@class='_2tbHP6ZydRpjI44J3syuqC s103i1tc-0 iIxhfI']/text()").get()
         with open('img_urls.txt', 'a+') as f:
             f.write("{}^^{}^^{}\n".format(l[0],author,response.url))
 
