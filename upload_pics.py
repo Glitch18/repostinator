@@ -19,12 +19,15 @@ def Reformat_Image(ImageFilePath):
         background.paste(image, offset)
         background.save('out.png')
 
-username = "import__memes"
-password = "ayyayyayy"
+account = open('Account_Info.txt','r')
+username = account.readline().rstrip()
+password = account.readline().rstrip()
+account.close()
 file = open('./img_urls.txt','r')
 urls = file.readlines()
 urls = [i[:-1] for i in urls]
 urls = [i.split('^^') for i in urls]
+file.close()
 
 cli = client(username,password)
 
@@ -38,14 +41,16 @@ for i in urls:
     if c=='n':
         viewer.terminate()
         viewer.kill()
+        os.remove('image')
+        f.close()
         continue
     Reformat_Image('image')
     cli.upload('out.png',"Post mirrored from Reddit\nCREDITS: "+i[1]+".\n.\n.\n.\n.\n.\n#memes #dankmemes #reddit #sadmemes #spicymemes #humor #funny #pewdiepie #fortnite #dailymemes #thanosmemes #minecraft #memereview #lwiay #pewnews #pewpew #memestgram #memedaily #memesfunny #epicmemes #normiememes #spicymeme #stolenmemes #dankmemesdaily #mememachine")
     viewer.terminate()
     viewer.kill()
-
-os.remove('image')
-if os.path.isfile('out.png'):
+    os.remove('image')
     os.remove('out.png')
+    f.close()
+
 os.remove('post_urls.txt')
 os.remove('img_urls.txt')
