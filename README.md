@@ -7,7 +7,7 @@ This is a bot built to scrape images from reddit and automatically upload them t
 ## Instructions
 
 If you don't have instapy-cli set up, download it from the following repository and run setup.
-link -
+link - https://github.com/instagrambot/instapy-cli
 
 In the root directory, create a file named "Account.txt" add your username and password to the
 first and second line of that file.
