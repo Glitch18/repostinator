@@ -15,14 +15,14 @@ class RedditcrawlerSpider(scrapy.Spider):
         l = [x for x in l if 'i.redd.it' in x or 'external-preview.redd.it' in x]
         if len(l)==0:
             return
-        author = response.xpath("//a[@class='_2tbHP6ZydRpjI44J3syuqC s103i1tc-0 iIxhfI']/text()").get()
+        author = response.xpath("//a[@class='_2tbHP6ZydRpjI44J3syuqC _23wugcdiaj44hdfugIAlnX oQctV4n0yUb0uiHDdGnmE']/text()").get()
         with open('img_urls.txt', 'a+') as f:
             f.write("{}^^{}^^{}\n".format(l[0],author,response.url))
 
 
     def parse(self, response):
         l = response.xpath('//a/@href').getall()
-        l = [x for x in l if 'reddit' in x and 'comments/b' in x]
+        l = [x for x in l if 'reddit' in x and 'comments/c' in x]
 
         for i in l:
             yield scrapy.Request(url=i,callback=self.getImageUrl)
