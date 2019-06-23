@@ -19,7 +19,7 @@ def Reformat_Image(ImageFilePath):
         background.paste(image, offset)
         background.save('out.png')
 
-account = open('Account_Info.txt','r')
+account = open('Account.txt','r')
 username = account.readline().rstrip()
 password = account.readline().rstrip()
 account.close()
